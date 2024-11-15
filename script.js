@@ -24,10 +24,15 @@ function reliableMultiply(a, b) {
       return primitiveMultiply(a, b);
     }
     catch(err){
-      if (err instanceof MultiplicatorUnitFailure) {
+      if (!(err instanceof MultiplicatorUnitFailure))  {
+        //If the error is NOT an instanceof... Slide 28 of Lecture 12 demonstrated the instanceof line//
         throw err;
       }      
     }
   }
 }
-console.log(reliableMultiply(4, 5))
+console.log(reliableMultiply(7, 5))
+
+
+//After trying the script like 20 times ive concluded it is air tight and function as desired
+//Zero klunks
