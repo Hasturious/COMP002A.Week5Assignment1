@@ -23,8 +23,10 @@ function reliableMultiply(a, b) {
     try {
       return primitiveMultiply(a, b);
     }
-    catch(){
-      primitiveMultiply(a, b)      
+    catch(err){
+      if (err instanceof MultiplicatorUnitFailure) {
+        throw err;
+      }      
     }
   }
 }
